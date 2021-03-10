@@ -1,5 +1,9 @@
 import GameSavingLoader from './GameSavingLoader';
+import GameSaving from './GameSaving';
 
 console.log('worked');
 
-console.log(GameSavingLoader.load().then((saving) => saving));
+GameSavingLoader.load().then((saving) => {
+  console.log(saving);
+  return new GameSaving(saving);
+});
